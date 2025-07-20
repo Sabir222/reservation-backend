@@ -8,7 +8,7 @@ const pool = new Pool({
   host: "localhost",
   database: "reservationdb",
   password: process.env.DB_PW,
-  port: Number(process.env.PORT_DB),
+  port: process.env.PORT_DB ? Number(process.env.PORT_DB) : 5432,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
